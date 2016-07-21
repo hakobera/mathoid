@@ -35,7 +35,7 @@ function initApp(options) {
     app.info = packageInfo;         // this app's package info
 
     // ensure some sane defaults
-    if(!app.conf.port) { app.conf.port = 10042; }
+    if(!app.conf.port) { app.conf.port = parseInt(process.env.PORT || 10042); }
     if(!app.conf.interface) { app.conf.interface = '0.0.0.0'; }
     if(app.conf.compression_level === undefined) { app.conf.compression_level = 3; }
     if(app.conf.cors === undefined) { app.conf.cors = '*'; }
